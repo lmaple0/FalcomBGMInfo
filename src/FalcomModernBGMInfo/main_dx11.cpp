@@ -247,7 +247,7 @@ void DetectAndConfigure() {
             g_Config.gameName = "Tokyo Xanadu eX+";
             g_Config.windowTitlePart = "Tokyo Xanadu";
             g_Config.yamlFiles.push_back("BgmMap_TokyoXanadu.yaml");
-            g_Config.useOpus = false;
+            g_Config.useOpus = true;
             g_Config.useWav = false;
             break;
         case GameID::SkyRemake:
