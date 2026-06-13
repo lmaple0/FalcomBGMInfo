@@ -11,11 +11,6 @@ jobs:
   build:
     runs-on: windows-latest
     
-    strategy:
-      fail-fast: false
-      matrix:
-        arch: [x64, x86]
-        
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
@@ -28,23 +23,11 @@ jobs:
       with:
         vcpkgGitCommitId: 'a42af01b72c28a8e1d7b48107b33e4f286a55ef6'
         
-    - name: Install vcpkg dependencies (x64)
-      if: matrix.arch == 'x64'
-      run: |
-        vcpkg install yaml-cpp:x64-windows-static minhook:x64-windows-static directx-headers:x64-windows-static directxtk:x64-windows-static
-        
     - name: Install vcpkg dependencies (x86)
-      if: matrix.arch == 'x86'
       run: |
         vcpkg install yaml-cpp:x86-windows-static minhook:x86-windows-static directx-headers:x86-windows-static directxtk:x86-windows-static
         
-    - name: Configure CMake (x64)
-      if: matrix.arch == 'x64'
-      run: |
-        cmake -B build -S src/FalcomModernBGMInfo -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake" -A x64
-        
     - name: Configure CMake (x86)
-      if: matrix.arch == 'x86'
       run: |
         cmake -B build -S src/FalcomModernBGMInfo -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake" -A Win32
         
@@ -59,6 +42,6 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v4
       with:
-        name: FalcomModernBGMInfo-${{ matrix.arch }}-Release
+        name: FalcomModernBGMInfo-x86-Release
         path: build/Release/FalcomModernBGMInfo.dll
         retention-days: 30
