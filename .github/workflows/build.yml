@@ -1,0 +1,59 @@
+name: Build FalcomModernBGMInfo DLL
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: windows-latest
+    
+    strategy:
+      matrix:
+        arch: [x64, x86]
+        
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+      
+    - name: Setup MSVC
+      uses: microsoft/setup-msbuild@v1.1
+      
+    - name: Install vcpkg
+      run: |
+        git clone https://github.com/microsoft/vcpkg.git
+        .\vcpkg\bootstrap-vcpkg.bat
+        
+    - name: Install dependencies (x64)
+      if: matrix.arch == 'x64'
+      run: |
+        .\vcpkg\vcpkg install yaml-cpp:x64-windows-static-md minhook:x64-windows-static-md directx-headers:x64-windows-static-md directxtk:x64-windows-static-md
+        
+    - name: Install dependencies (x86)
+      if: matrix.arch == 'x86'
+      run: |
+        .\vcpkg\vcpkg install yaml-cpp:x86-windows-static-md minhook:x86-windows-static-md directx-headers:x86-windows-static-md directxtk:x86-windows-static-md
+        
+    - name: Configure CMake (x64)
+      if: matrix.arch == 'x64'
+      run: |
+        cmake -B build -S src/FalcomModernBGMInfo -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}\vcpkg\scripts\buildsystems\vcpkg.cmake" -A x64
+        
+    - name: Configure CMake (x86)
+      if: matrix.arch == 'x86'
+      run: |
+        cmake -B build -S src/FalcomModernBGMInfo -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}\vcpkg\scripts\buildsystems\vcpkg.cmake" -A Win32
+        
+    - name: Build
+      run: |
+        cmake --build build --config Release
+        
+    - name: Upload artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: FalcomModernBGMInfo-${{ matrix.arch }}-Release
+        path: build/Release/FalcomModernBGMInfo.dll
+        retention-days: 30
