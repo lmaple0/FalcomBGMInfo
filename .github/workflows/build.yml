@@ -12,7 +12,6 @@ jobs:
     runs-on: windows-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
-      VCPKG_DEFAULT_TRIPLET: 'x86-windows-static'
     
     steps:
     - name: Checkout code
@@ -22,20 +21,31 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
       
     - name: Setup vcpkg
+      shell: bash
       run: |
-        git clone https://github.com/microsoft/vcpkg.git ${{ github.workspace }}/vcpkg
-        ${{ github.workspace }}/vcpkg/bootstrap-vcpkg.bat
-        echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $env:GITHUB_ENV
+        VCPKG_ROOT="${GITHUB_WORKSPACE}/vcpkg"
+        git clone https://github.com/microsoft/vcpkg.git "${VCPKG_ROOT}"
+        "${VCPKG_ROOT}/bootstrap-vcpkg.bat"
+        echo "VCPKG_ROOT=${VCPKG_ROOT}" >> $GITHUB_ENV
         
     - name: Install vcpkg dependencies
+      shell: bash
       run: |
-        ${{ github.workspace }}/vcpkg/vcpkg install yaml-cpp minhook directx-headers directxtk --triplet x86-windows-static
+        "${VCPKG_ROOT}/vcpkg" install yaml-cpp minhook directx-headers directxtk --triplet x86-windows-static
+        
+    - name: Check installed packages
+      shell: bash
+      run: |
+        ls -la "${VCPKG_ROOT}/installed/x86-windows-static/lib/" || echo "No lib dir"
+        ls -la "${VCPKG_ROOT}/installed/x86-windows-static/share/" || echo "No share dir"
         
     - name: Configure CMake
+      shell: bash
       run: |
-        cmake -B build -S src/FalcomModernBGMInfo `
-          -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake" `
-          -A Win32
+        cmake -B build -S src/FalcomModernBGMInfo \
+          -DCMAKE_TOOLCHAIN_FILE="${VCPKG_ROOT}/scripts/buildsystems/vcpkg.cmake" \
+          -A Win32 \
+          -DCMAKE_MSVC_RUNTIME_LIBRARY=MultiThreaded
         
     - name: Build
       run: |
