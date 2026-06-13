@@ -681,6 +681,7 @@ void InitImGui(IDXGISwapChain* pSwapChain) {
             cfg2.MergeMode = true;
             io.Fonts->AddFontFromFileTTF(f2.c_str(), 28.0f, &cfg2, ranges);
         }
+        io.Fonts->Build();
 
         std::string texStr = GetModDirectory() + "\\assets\\bgm_info.dds";
         std::wstring texW(texStr.begin(), texStr.end());
