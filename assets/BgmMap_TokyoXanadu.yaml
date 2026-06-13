@@ -1,0 +1,113 @@
+# BGM mapping for Tokyo Xanadu eX+
+# Format: "filename.ogg": "English Title|Japanese Title|Disc|Track"
+# Disc 1-3 = TOKYO XANADU ORIGINAL SOUNDTRACK (NW10103350)
+# Disc 4   = TOKYO XANADU ORIGINAL SOUNDTRACK II=eX+ (NW10103400)
+# Metadata: corrected .ogg Vorbis TITLE tags (user corrected 2026-06-14)
+# Generated: 2026-06-14
+
+bgmTitles:
+  # ===== Disc 1 (OST Disc 1 / Vol.1) =====
+  "tx0502.ogg": "Usual Morning|いつもの朝|1|02"
+  "tx0500.ogg": "Common Sight|ありふれた光景|1|03"
+  "tx0100.ogg": "Today's Schedule?|Today's Schedule?|1|04"
+  "tx0101.ogg": "Morimiya is Okay!!|Morimiya is Okay!!|1|05"
+  "tx0518.ogg": "Daily Life to Shake|揺らぐ日常|1|06"
+  "tx0515.ogg": "Eclipse|Eclipse|1|07"
+  "tx0315.ogg": "Beyond the Day-to-Day|Beyond the Day-to-Day|1|08"
+  "tx0401.ogg": "Sensual Predicament|Sensual Predicament|1|09"
+  "tx0200.ogg": "Kokonoe Shrine|九重神社|1|10"
+  "tx0504.ogg": "Warmly Breath|Warmly Breath|1|11"
+  "tx0503.ogg": "Pleasant Lesson|たのしい授業|1|12"
+  "tx0104.ogg": "Looking for a Clue|手掛かりを求めて|1|13"
+  "tx0301.ogg": "Strayed Into Passage|Strayed Into Passage|1|14"
+  "tx0510.ogg": "Pain of the Gentleness|優しさの痛み|1|15"
+  "tx0512.ogg": "Pure Resolution|Pure Resolution|1|16"
+  "tx0109.ogg": "Hazy Moon|Hazy Moon|1|17"
+  "tx0402.ogg": "Believe It!!|Believe It!!|1|18"
+  "tx0501.ogg": "Break Time|憩いの時間|1|19"
+  "tx0102.ogg": "Survey Legwork|Survey Legwork|1|20"
+  "tx0303.ogg": "Temptation to Abyss|Temptation to Abyss|1|21"
+  "tx0108.ogg": "Let's Thinking!|Let's Thinking!|1|22"
+  "tx0307.ogg": "Spiritual Wall|Spiritual Wall|1|23"
+
+  # ===== Disc 2 (OST Disc 2 / Vol.2) =====
+  "tx0519.ogg": "Blackmailer|Blackmailer|2|01"
+  "tx0103.ogg": "Moistened Feel|Moistened Feel|2|02"
+  "tx0605.ogg": "Magical Girl Alisa|魔法少女まじかるアリサ|2|03"
+  "tx0701.ogg": "Gate of Avalon|GATE OF AVALON|2|04"
+  "tx0203.ogg": "Dance Club \"Gemini\"|ダンスクラブ《ジェミニ》|2|05"
+  "tx0306.ogg": "Soul to Burn|Soul to Burn|2|06"
+  "tx0204.ogg": "Bustle|喧騒|2|07"
+  "tx0106.ogg": "My Blaze, My Truth|己の焔を信じて|2|08"
+  "tx0304.ogg": "Calm Passion|Calm Passion|2|09"
+  "tx0601.ogg": "Shooting Star of Love|恋のシューティングスター (Short Ver.)|2|10"
+  "tx0317.ogg": "Enigmatic Uncertainty|Enigmatic Uncertainty|2|11"
+  "tx0310.ogg": "Bravely Storm|Bravely Storm|2|12"
+  "tx0405.ogg": "Horrifying Disaster|Horrifying Disaster|2|13"
+  "tx0509.ogg": "Trust to Deepen|深まる信頼|2|14"
+  "tx0505.ogg": "Happy Holiday|Happy Holiday|2|15"
+  "tx0201.ogg": "Kamiyama Hot Spring Resort|神山温泉|2|16"
+  "tx0513.ogg": "Tokyo Dusk-Calamity|東京冥災|2|17"
+  "tx0516.ogg": "The Observer|異界の子|2|18"
+  "tx0309.ogg": "Immemorial Sanctuary|Immemorial Sanctuary|2|19"
+  "tx0514.ogg": "Invaded World|侵食される世界|2|21"
+  "tx0105.ogg": "Investigation|Investigation|2|22"
+  "tx0313.ogg": "Possibility Flaps|Possibility Flaps|2|23"
+  "tx0602.ogg": "Wish☆Wing|Wish☆Wing (Short Ver.)|2|24"
+
+  # ===== Disc 3 (OST Disc 3 / Vol.3) =====
+  "tx0700.ogg": "Sensitive Game|Sensitive Game|3|01"
+  "tx0202.ogg": "Master's Recommendation|マスターのお勧めを|3|02"
+  "tx0521.ogg": "Suspicion|Suspicion|3|03"
+  "tx0308.ogg": "Apocalyptic Roar|Apocalyptic Roar|3|04"
+  "tx0523.ogg": "Fetal Movement|胎動|3|05"
+  "tx0314.ogg": "Coercive Steel|Coercive Steel|3|06"
+  "tx0506.ogg": "That Day, 10 Years Ago|10年前のあの日|3|07"
+  "tx0107.ogg": "Isolated City|隔絶の地|3|08"
+  "tx0400.ogg": "Raging Rush|Raging Rush|3|09"
+  "tx0316.ogg": "Make Desperate Efforts|Make Desperate Efforts|3|10"
+  "tx0409.ogg": "Immediate Menace|Immediate Menace|3|11"
+  "tx0507.ogg": "Night Falls|Night Falls|3|12"
+  "tx0511.ogg": "Entrust Back|背中預けて|3|13"
+  "tx0522.ogg": "Causal Horizon|因果紡がれし座|3|14"
+  "tx0407.ogg": "Revolt Against Doom|Revolt Against Doom|3|15"
+  "tx0404.ogg": "Liberation Drive|Liberation Drive|3|16"
+  "tx0517.ogg": "Fleeting Peace|うたかたの安らぎ|3|17"
+  "tx0002.ogg": "To Tomorrow|明日へ|3|18"
+  "tx0110.ogg": "Hajimari No Telepathy|始まりのテレパシー|3|19"
+  "tx0524.ogg": "Eternity|久遠|3|20"
+  "tx0410.ogg": "Seize the Day|Seize the day|3|21"
+  "tx0520.ogg": "Fruition|結実する想い|3|22"
+  "tx0000.ogg": "X.R.C|X.R.C|3|24"
+
+  # ===== Disc 4 (II=eX+ exclusive / Vol.II=eX+) =====
+  "tx0004b.ogg": "All is a Lie (eX+ Version)|all is a lie (eX+ Version)|4|01"
+  "tx0350.ogg": "Symptom|Symptom|4|02"
+  "tx0411.ogg": "Ardent Undulation|Ardent Undulation|4|03"
+  "tx0360.ogg": "Profound Heart|Profound Heart|4|04"
+  "tx0370.ogg": "Pitch-Dark Nebula|Pitch-dark Nebula|4|05"
+  "tx0111.ogg": "Autumn Sunshine|秋の陽光|4|07"
+  "tx0551.ogg": "Seething Ardor|Seething Ardor|4|09"
+  "tx0557.ogg": "Sacred Tyrannizer|Sacred Tyrannizer|4|10"
+  "tx0552.ogg": "Muddy Zone|Muddy Zone|4|11"
+  "tx0560.ogg": "Infinite Expanse|Infinite Expanse|4|12"
+  "tx0555.ogg": "Earnestly Advance|Earnestly Advance|4|13"
+  "tx0559.ogg": "Vesper Umbra|Vesper Umbra|4|14"
+  "tx0550.ogg": "Happy Halloween!|Happy Halloween!|4|15"
+
+  # ===== Alternate / Duplicate versions (same track, different file) =====
+  "tx0302.ogg": "Hazy Moon (Alt)|Hazy Moon|1|17"
+  "tx0600.ogg": "Hajimari No Telepathy (Alt)|始まりのテレパシー|3|19"
+  "tx0554.ogg": "Happy Halloween! (Alt)|Happy Halloween!|4|15"
+
+  # ===== Vocal / Off Vocal tracks (from I'll remember you album) =====
+  "tx0005.ogg": "all is a lie (Off Vocal Ver.)|all is a lie (Off Vocal Ver.)|V|01"
+
+# ================================================================
+# Still missing OST tracks (not found in BGM files, needs in-game verification):
+#   Disc 2 Track 20: "Prism My Heart" (プリズム・マイ・ハート)
+#   Disc 3 Track 23: "Summer Vacation" (夏の訪れ)
+#   Disc 4 Track 06: "Since Then..." (あれから...)
+#   Disc 4 Track 08: "Accident of Silence" (静寂の異変)
+#   Disc 4 Track 16: "With an Important Person" (大切な人と)
+# These may share BGM files with similarly-named tracks.

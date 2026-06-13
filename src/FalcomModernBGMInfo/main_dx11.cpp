@@ -39,7 +39,8 @@ enum class GameID {
     Unknown,
     SkyRemake,
     CS1, CS2, CS3, CS4, Reverie,
-    Ys8, Ys9, Celceta, Nayuta
+    Ys8, Ys9, Celceta, Nayuta,
+    TokyoXanadu
 };
 
 struct GameConfig {
@@ -184,6 +185,7 @@ void DetectAndConfigure() {
     else if (exe.find("ys9_jp.exe") != std::string::npos) g_CurrentGame = GameID::Ys9;
     else if (exe.find("ysc_dx11.exe") != std::string::npos) g_CurrentGame = GameID::Celceta;
     else if (exe.find("nys.exe") != std::string::npos) g_CurrentGame = GameID::Nayuta;
+    else if (exe.find("tokyoxanadu.exe") != std::string::npos) g_CurrentGame = GameID::TokyoXanadu;
 
     switch (g_CurrentGame) {
         case GameID::CS1:
@@ -240,6 +242,13 @@ void DetectAndConfigure() {
             g_Config.windowTitlePart = "Boundless Trails";
             g_Config.yamlFiles.push_back("BgmMap_Nayuta.yaml");
             g_Config.useOpus = true;
+            break;
+        case GameID::TokyoXanadu:
+            g_Config.gameName = "Tokyo Xanadu eX+";
+            g_Config.windowTitlePart = "Tokyo Xanadu";
+            g_Config.yamlFiles.push_back("BgmMap_TokyoXanadu.yaml");
+            g_Config.useOpus = false;
+            g_Config.useWav = false;
             break;
         case GameID::SkyRemake:
             g_Config.gameName = "Trails in the Sky (Remake)";
