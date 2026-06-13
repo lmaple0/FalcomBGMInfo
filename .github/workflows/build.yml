@@ -31,7 +31,7 @@ jobs:
     - name: Install vcpkg dependencies
       shell: bash
       run: |
-        "${VCPKG_ROOT}/vcpkg" install yaml-cpp minhook directx-headers directxtk --triplet x86-windows-static
+        "${VCPKG_ROOT}/vcpkg" install yaml-cpp minhook directx-headers directxtk directxtex --triplet x86-windows-static
         
     - name: Check installed packages
       shell: bash
