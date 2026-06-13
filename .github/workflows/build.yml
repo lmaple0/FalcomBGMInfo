@@ -12,6 +12,7 @@ jobs:
     runs-on: windows-latest
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+      VCPKG_DEFAULT_TRIPLET: 'x86-windows-static'
     
     steps:
     - name: Checkout code
@@ -21,17 +22,20 @@ jobs:
       uses: microsoft/setup-msbuild@v1.1
       
     - name: Setup vcpkg
-      uses: lukka/run-vcpkg@v11
-      with:
-        vcpkgGitCommitId: 'a42af01b72c28a8e1d7b48107b33e4f286a55ef6'
-        
-    - name: Install vcpkg dependencies (x86)
       run: |
-        vcpkg install yaml-cpp:x86-windows-static minhook:x86-windows-static directx-headers:x86-windows-static directxtk:x86-windows-static
+        git clone https://github.com/microsoft/vcpkg.git ${{ github.workspace }}/vcpkg
+        ${{ github.workspace }}/vcpkg/bootstrap-vcpkg.bat
+        echo "VCPKG_ROOT=${{ github.workspace }}/vcpkg" >> $env:GITHUB_ENV
         
-    - name: Configure CMake (x86)
+    - name: Install vcpkg dependencies
       run: |
-        cmake -B build -S src/FalcomModernBGMInfo -DCMAKE_TOOLCHAIN_FILE="$env:VCPKG_ROOT/scripts/buildsystems/vcpkg.cmake" -A Win32
+        ${{ github.workspace }}/vcpkg/vcpkg install yaml-cpp minhook directx-headers directxtk --triplet x86-windows-static
+        
+    - name: Configure CMake
+      run: |
+        cmake -B build -S src/FalcomModernBGMInfo `
+          -DCMAKE_TOOLCHAIN_FILE="${{ github.workspace }}/vcpkg/scripts/buildsystems/vcpkg.cmake" `
+          -A Win32
         
     - name: Build
       run: |
